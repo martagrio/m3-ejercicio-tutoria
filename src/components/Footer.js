@@ -6,10 +6,10 @@ class Footer extends React.Component {
 		this.state = {
 			time: ''
 		}
-		this.getTime = this.getTime.bind(this);
 	}
-		componentDidMount() {
-		this.clock = setInterval(this.getTime, 1000);
+
+	componentDidMount() {
+		setInterval(()=>{this.getTime();}, 1000);
 	}
 
 	getTime() {
@@ -17,10 +17,6 @@ class Footer extends React.Component {
 		const minutes = new Date().getMinutes();
 		const seconds = new Date().getSeconds();
 		this.setState({time: `${hours}:${minutes}:${seconds}`}); 
-	}
-
-	updateClock() {
-		this.clock = setInterval(this.getTime, 1000);
 	}
 
 	render() {

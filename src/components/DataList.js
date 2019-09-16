@@ -1,5 +1,6 @@
 import React from 'react';
 import DataCard from './DataCard';
+import PropTypes from 'prop-types';
 
 class DataList extends React.Component {
 	render() {
@@ -13,6 +14,10 @@ class DataList extends React.Component {
 			</ul>
 		)
 	}		
+}
+
+DataList.propTypes = {
+	data: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default DataList;
